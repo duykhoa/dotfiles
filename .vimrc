@@ -1,4 +1,5 @@
 set nocompatible
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -20,7 +21,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
 Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
-Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
 filetype plugin indent on
