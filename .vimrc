@@ -23,6 +23,15 @@ Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'majutsushi/tagbar'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'kien/rainbow_parentheses.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,6 +59,9 @@ set laststatus=2
 "set relativenumber
 set cursorline
 
+colorscheme last256
+"colorscheme bocau
+
 set tabstop=2
 set shiftwidth=2
 imap jj <Esc>
@@ -67,3 +79,4 @@ let g:auto_save_silent = 1
 
 " custom plugin
 map <leader>n :NERDTreeToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
