@@ -55,6 +55,7 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set ttyfast
+set noswapfile
 set backspace=indent,eol,start
 set laststatus=2
 "set relativenumber
