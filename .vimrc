@@ -22,8 +22,8 @@ Plugin 'slim-template/vim-slim'
 Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -59,6 +59,7 @@ set backspace=indent,eol,start
 set laststatus=2
 "set relativenumber
 set cursorline
+set lazyredraw
 
 colorscheme last256
 "colorscheme bocau
