@@ -22,6 +22,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'chrisbra/NrrwRgn'
@@ -64,6 +65,7 @@ colorscheme last256
 
 set tabstop=2
 set shiftwidth=2
+set expandtab
 imap jj <Esc>
 nmap ; :
 
