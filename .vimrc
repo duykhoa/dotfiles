@@ -44,6 +44,7 @@ let mapleader = ","
 set term=xterm
 set t_Co=256
 
+set hlsearch
 set background = "dark"
 set modelines=0
 syntax enable
@@ -57,7 +58,10 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set ttyfast
+
+set nobackup
 set noswapfile
+
 set backspace=indent,eol,start
 set laststatus=2
 "set relativenumber
