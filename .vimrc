@@ -83,4 +83,5 @@ let g:auto_save_silent = 1
 
 " custom plugin
 map <leader>n :NERDTreeToggle<CR>
+map 0 ^
 nmap <leader>t :TagbarToggle<CR>
