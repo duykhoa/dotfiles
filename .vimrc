@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
+Plugin 'benmills/vimux'
 Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -73,7 +74,9 @@ nmap ; :
 
 let g:vroom_use_colors = 1
 let g:vroom_use_vimux = 1
-let g:vroom_use_spring = 1
+let g:vroom_write_all = 1
+let g:vroom_clear_screen = 1
+"let g:vroom_use_spring = 1
 
 " auto save config
 let g:auto_save = 1
