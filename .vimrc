@@ -34,6 +34,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'vim-scripts/vim-auto-save'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,8 +70,10 @@ colorscheme last256
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
 imap jj <Esc>
 nmap ; :
+map 0 ^
 
 let g:vroom_use_colors = 1
 let g:vroom_use_vimux = 1
@@ -82,9 +85,11 @@ let g:vroom_clear_screen = 1
 let g:auto_save = 1
 let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
-let g:auto_save_silent = 1
+"let g:auto_save_silent = 0
 
 " custom plugin
 map <leader>n :NERDTreeToggle<CR>
-map 0 ^
 nmap <leader>t :TagbarToggle<CR>
+
+map <leader>vi :VimuxInspectRunner<CR>
+map <Leader>vq :VimuxCloseRunner<CR>
