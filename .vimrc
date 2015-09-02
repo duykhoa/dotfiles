@@ -35,6 +35,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 call vundle#end()
 filetype plugin indent on
