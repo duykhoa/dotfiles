@@ -15,7 +15,6 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'mileszs/ack.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'slim-template/vim-slim'
@@ -24,22 +23,21 @@ Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'chrisbra/NrrwRgn'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'ervandew/supertab'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'luochen1990/rainbow'
 
 call vundle#end()
 filetype plugin indent on
+
+let g:rainbow_active = 1
 
 let mapleader = ","
 
@@ -69,6 +67,7 @@ set laststatus=2
 "set relativenumber
 set cursorline
 set lazyredraw
+set nowrap
 
 colorscheme last256
 "colorscheme bocau
