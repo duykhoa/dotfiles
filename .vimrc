@@ -71,6 +71,10 @@ set nowrap
 
 colorscheme last256
 "colorscheme bocau
+"colorscheme google
+"colorscheme jellybeans
+"colorscheme jellybeans
+"colorscheme vividchalk
 
 set tabstop=2
 set shiftwidth=2
