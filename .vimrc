@@ -69,8 +69,8 @@ set cursorline
 set lazyredraw
 set nowrap
 
-colorscheme last256
-"colorscheme bocau
+"colorscheme last256
+colorscheme bocau
 "colorscheme google
 "colorscheme jellybeans
 "colorscheme jellybeans
