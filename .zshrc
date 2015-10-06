@@ -53,6 +53,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kevin/.rvm/gems
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source ~/.git-flow-completion.zsh
+fpath=(~/.zsh $fpath)
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -81,12 +83,20 @@ source $ZSH/oh-my-zsh.sh
 #
 alias work="cd ~/Working"
 alias c="clear"
-alias facepush="cd ~/Working/facepush/script && ./start_script"
+alias gf="git flow"
+
 #
 # My customizations
 export EDITOR='vim'
 #source ~/.bin/tmuxinator.zsh
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/kevin/.boot2docker/certs/boot2docker-vm
+
+source ~/.transferrc
