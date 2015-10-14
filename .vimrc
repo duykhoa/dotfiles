@@ -33,6 +33,7 @@ Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'luochen1990/rainbow'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on
@@ -116,6 +117,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader><leader> <c-^>
 
 " Make it obvious where 80 characters is
- set textwidth=80
- set colorcolumn=+1
- hi ColorColumn guibg=#27ae60 ctermbg=11
+set textwidth=80
+set colorcolumn=+1
+hi ColorColumn guibg=#27ae60 ctermbg=11
