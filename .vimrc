@@ -107,7 +107,8 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
-" set tags=./tags
+" ctags
+set tags=./.git/tags
 map <Leader>ct :!ctags -R .<CR>
 nnoremap <leader>. :CtrlPTag<cr>
 
@@ -117,3 +118,4 @@ nnoremap <leader><leader> <c-^>
 " Make it obvious where 80 characters is
  set textwidth=80
  set colorcolumn=+1
+ hi ColorColumn guibg=#27ae60 ctermbg=11
