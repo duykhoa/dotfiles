@@ -73,7 +73,6 @@ set nowrap
 colorscheme bocau
 "colorscheme google
 "colorscheme jellybeans
-"colorscheme jellybeans
 "colorscheme vividchalk
 
 set tabstop=2
@@ -96,10 +95,10 @@ let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 "let g:auto_save_silent = 0
 
-" custom plugin
+" nerd tree
 map <leader>n :NERDTreeToggle<CR>
-nmap <leader>t :TagbarToggle<CR>
 
+" Vimux
 map <leader>vi :VimuxInspectRunner<CR>
 map <Leader>vq :VimuxCloseRunner<CR>
 
@@ -109,9 +108,11 @@ set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " ctags
-set tags=./.git/tags
-map <Leader>ct :!ctags -R .<CR>
+set tags=./.tags
+map <Leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
+
 nnoremap <leader>. :CtrlPTag<cr>
+nmap <leader>ta :TagbarToggle<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
