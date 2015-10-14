@@ -64,7 +64,6 @@ set noswapfile
 
 set backspace=indent,eol,start
 set laststatus=2
-"set relativenumber
 set cursorline
 set lazyredraw
 set nowrap
@@ -102,3 +101,19 @@ nmap <leader>t :TagbarToggle<CR>
 
 map <leader>vi :VimuxInspectRunner<CR>
 map <Leader>vq :VimuxCloseRunner<CR>
+
+" fold
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+" set tags=./tags
+map <Leader>ct :!ctags -R .<CR>
+nnoremap <leader>. :CtrlPTag<cr>
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Make it obvious where 80 characters is
+ set textwidth=80
+ set colorcolumn=+1
