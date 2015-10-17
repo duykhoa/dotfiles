@@ -119,3 +119,6 @@ nnoremap <leader><leader> <c-^>
 set textwidth=80
 set colorcolumn=+1
 hi ColorColumn guibg=#27ae60 ctermbg=11
+
+" CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags
