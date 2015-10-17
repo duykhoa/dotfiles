@@ -33,7 +33,6 @@ Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'luochen1990/rainbow'
-Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on
@@ -109,10 +108,9 @@ set nofoldenable        "dont fold by default
 
 " ctags
 set tags=./.tags
-map <Leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
+nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
-nmap <leader>ta :TagbarToggle<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>

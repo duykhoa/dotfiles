@@ -19,6 +19,7 @@
   whitespace = red reverse
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
 [alias]
   st = status
   ci = commit
@@ -35,3 +36,7 @@
 [user]
 	name = Duy Khoa
 	email = duykhoa12t@gmail.com
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[merge]
+	tool = kdiff3
