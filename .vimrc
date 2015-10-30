@@ -107,7 +107,6 @@ set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " ctags
-set tags=./.tags
 nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
@@ -116,9 +115,9 @@ nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader><leader> <c-^>
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
-hi ColorColumn guibg=#27ae60 ctermbg=11
+"set textwidth=80
+"set colorcolumn=+1
+"hi ColorColumn guibg=#27ae60 ctermbg=11
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags
