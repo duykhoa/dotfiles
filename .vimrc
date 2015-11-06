@@ -33,6 +33,9 @@ Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'luochen1990/rainbow'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'Raimondi/delimitMate' " autocomplete bracket
+Plugin 'msanders/snipmate.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,10 +72,10 @@ set lazyredraw
 set nowrap
 
 "colorscheme last256
-colorscheme bocau
+"colorscheme bocau
 "colorscheme google
 "colorscheme jellybeans
-"colorscheme vividchalk
+colorscheme vividchalk
 
 set tabstop=2
 set shiftwidth=2
@@ -107,7 +110,7 @@ set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " ctags
-nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR>
+nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR><CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
 
@@ -120,4 +123,4 @@ nnoremap <leader><leader> <c-^>
 "hi ColorColumn guibg=#27ae60 ctermbg=11
 
 " CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*
