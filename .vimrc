@@ -35,7 +35,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'luochen1990/rainbow'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'Raimondi/delimitMate' " autocomplete bracket
-Plugin 'msanders/snipmate.vim'
+"Plugin 'msanders/snipmate.vim'
 
 call vundle#end()
 filetype plugin indent on
