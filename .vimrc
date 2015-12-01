@@ -75,7 +75,20 @@ set nowrap
 "colorscheme bocau
 "colorscheme google
 "colorscheme jellybeans
-colorscheme vividchalk
+"colorscheme vividchalk
+"colorscheme blue
+"colorscheme borland
+"colorscheme torte
+colorscheme wombat
+"colorschemd zenburn
+"colorschemd molokai
+"colorschemd badwolf
+"colorschemd hybrid
+"colorschemd xoria256
+"colorschemd mango
+"colorschemd herald
+"colorschemd ekvoli
+"colorschemd peaksea
 
 set tabstop=2
 set shiftwidth=2
