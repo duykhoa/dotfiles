@@ -136,4 +136,5 @@ nnoremap <leader><leader> <c-^>
 "hi ColorColumn guibg=#27ae60 ctermbg=11
 
 " CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/public/bower_components/*,*/public/dist/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/public/bower_components/*,*/public/dist/*,*/node_modules/*
+map <leader>p :CtrlPClearAllCaches<CR>
