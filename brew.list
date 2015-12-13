@@ -2,10 +2,13 @@ ack
 autoconf
 autojump
 automake
+cctools
+cscope
 ctags
 docker
 docker-machine
-elasticsearch
+freetype
+gdbm
 git
 git-flow
 git-lfs
@@ -16,15 +19,16 @@ libevent
 libgpg-error
 libksba
 libpng
+libtiff
 libtool
 libyaml
 mackup
 macvim
 makedepend
 memcached
+mercurial
 openssl
 pcre
-phantomjs
 pkg-config
 postgresql
 python
@@ -41,3 +45,4 @@ tree
 vim
 xz
 zsh
+zsh-completions
