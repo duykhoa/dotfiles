@@ -8,7 +8,7 @@ export ZSH=/Users/kevin/.oh-my-zsh
 #ZSH_THEME="bira"
 #ZSH_THEME="fino"
 #ZSH_THEME="philips"
-ZSH_THEME="muse"
+ZSH_THEME="geoffgarside"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
