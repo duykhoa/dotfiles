@@ -1,9 +1,10 @@
 --color
 
 --type-add=css=scss=sass
---type-add=ruby=.haml,.rselm,.feature,.ru,.lock
+--type-add=ruby=.feature,.ru,.lock,.rake,.jbuilder,.ru,.lock,.rb
 --type-set=coffeescript=.coffee
 --type-set=coffee=.coffee
+--type-add=html=.haml,.slim,.erb,.html.erb,.html.haml,.html.slim
 
 --type-set=coffee=.coffee
 --type-set=jade=.jade
@@ -14,6 +15,7 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=node_modules
+--ignore-dir=public/assets
 
 --ignore-file=is:.tags
 --ignore-file=is:tags

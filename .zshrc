@@ -5,8 +5,10 @@ export ZSH=/Users/kevin/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#ZSH_THEME="bira"
+#ZSH_THEME="fino"
 #ZSH_THEME="philips"
-ZSH_THEME="fino"
+ZSH_THEME="muse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,11 +52,11 @@ plugins=(git zsh-syntax-highlighting zsh-pg git-flow git-flow-completion)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kevin/.rvm/gems/ruby-2.2.1/bin:/Users/kevin/.rvm/gems/ruby-2.2.1@global/bin:/Users/kevin/.rvm/rubies/ruby-2.2.1/bin:/Users/kevin/.rvm/bin:/Users/kevin/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kevin/.rvm/gems/ruby-2.2.1/bin:/Users/kevin/.rvm/gems/ruby-2.2.1@global/bin:/Users/kevin/.rvm/rubies/ruby-2.2.1/bin"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.git-flow-completion.zsh
 fpath=(~/.zsh $fpath)
 
 # You may need to manually set your language environment
@@ -94,10 +96,8 @@ export EDITOR='vim'
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/kevin/.boot2docker/certs/boot2docker-vm
 
-source ~/.transferrc
+#source ~/.transferrc

@@ -61,6 +61,7 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set ttyfast
+set re=1
 
 set nobackup
 set noswapfile
@@ -79,16 +80,21 @@ set nowrap
 "colorscheme blue
 "colorscheme borland
 "colorscheme torte
-colorscheme wombat
-"colorschemd zenburn
-"colorschemd molokai
-"colorschemd badwolf
-"colorschemd hybrid
-"colorschemd xoria256
-"colorschemd mango
-"colorschemd herald
-"colorschemd ekvoli
-"colorschemd peaksea
+"colorscheme wombat
+"colorscheme zenburn
+"colorscheme molokai
+"colorscheme badwolf
+"colorscheme hybrid
+"colorscheme xoria256
+"colorscheme mango
+"colorscheme herald
+"colorscheme ekvoli
+"colorscheme peaksea
+"colorscheme golden
+"colorscheme darth
+"colorscheme gotham256
+"colorscheme automation
+colorscheme flattr
 
 set tabstop=2
 set shiftwidth=2
@@ -118,7 +124,7 @@ map <leader>vi :VimuxInspectRunner<CR>
 map <Leader>vq :VimuxCloseRunner<CR>
 
 " fold
-set foldmethod=indent   "fold based on indent
+set foldmethod=manual
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
@@ -138,3 +144,10 @@ nnoremap <leader><leader> <c-^>
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/public/bower_components/*,*/public/dist/*,*/node_modules/*
 map <leader>p :CtrlPClearAllCaches<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
+" Map buffer
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
