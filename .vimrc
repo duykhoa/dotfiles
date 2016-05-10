@@ -7,7 +7,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
@@ -151,3 +150,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Map buffer
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
+
+" Explore
+map <leader>n :Explore<CR>
