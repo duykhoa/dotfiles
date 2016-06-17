@@ -52,7 +52,8 @@ plugins=(git zsh-syntax-highlighting zsh-pg git-flow git-flow-completion)
 
 # User configuration
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/kevin/.rvm/gems/ruby-2.2.1/bin:/Users/kevin/.rvm/gems/ruby-2.2.1@global/bin:/Users/kevin/.rvm/rubies/ruby-2.2.1/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# /Users/kevin/.rvm/gems/ruby-2.2.1/bin:/Users/kevin/.rvm/gems/ruby-2.2.1@global/bin:/Users/kevin/.rvm/rubies/ruby-2.2.1/bin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -84,20 +85,35 @@ fpath=(~/.zsh $fpath)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias work="cd ~/Working"
+alias work="cd ~/Workspace"
 alias c="clear"
+alias calc="bc -lq"
+alias gpull="git pull"
 alias gf="git flow"
-
+alias gfstart="git flow feature start"
+alias gffinish="git flow feature finish"
+alias gpush="git push -v"
+alias tmuxks="tmux kill-server"
+alias tmuxn="tmux new -s"
+alias tmuxa="tmux attach -t"
 #
 # My customizations
 export EDITOR='vim'
 #source ~/.bin/tmuxinator.zsh
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+#[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/kevin/.boot2docker/certs/boot2docker-vm
 
 #source ~/.transferrc
+#source ~/.git-flow-completion.zsh
+
+export PATH="$PATH:$HOME/Workspace/scripts:/usr/local/Cellar/iftop/1.0pre4/sbin"
+export WORKDIR=~/Workspace
+export SCRIPT_DIR=$WORKDIR/scripts
+
+alias dcb="docker-compose build"
+alias dcu="docker-compose up"
+alias dcr="docker-compose run"
+alias dockerr="docker run"
+alias dockerb="docker build"
