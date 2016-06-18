@@ -6,35 +6,23 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'slim-template/vim-slim'
 Plugin 'benmills/vimux'
 Plugin 'skalnik/vim-vroom'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'chrisbra/NrrwRgn'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-scripts/vim-auto-save'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ervandew/supertab'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'luochen1990/rainbow'
-Plugin 'hail2u/vim-css3-syntax'
+Plugin 'vim-scripts/vim-auto-save'
 Plugin 'Raimondi/delimitMate' " autocomplete bracket
-"Plugin 'msanders/snipmate.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,7 +34,7 @@ let mapleader = ","
 set term=xterm
 set t_Co=256
 
-set hlsearch
+"set hlsearch
 set background = "dark"
 set modelines=0
 syntax enable
@@ -61,39 +49,21 @@ set wildmode=list:longest,full
 set visualbell
 set ttyfast
 set re=1
+set relativenumber
 
 set nobackup
 set noswapfile
 
 set backspace=indent,eol,start
-set laststatus=2
-set cursorline
+
 set lazyredraw
+set redrawtime=5000
+set updatetime=5000
 set nowrap
 
-"colorscheme last256
-"colorscheme bocau
-"colorscheme google
-"colorscheme jellybeans
-"colorscheme vividchalk
-"colorscheme blue
-"colorscheme borland
-"colorscheme torte
-"colorscheme wombat
-"colorscheme zenburn
-"colorscheme molokai
-"colorscheme badwolf
-"colorscheme hybrid
-"colorscheme xoria256
-"colorscheme mango
-"colorscheme herald
-"colorscheme ekvoli
-"colorscheme peaksea
-"colorscheme golden
-"colorscheme darth
-"colorscheme gotham256
-"colorscheme automation
-colorscheme flattr
+colorscheme last256
+
+set laststatus=2
 
 set tabstop=2
 set shiftwidth=2
@@ -107,12 +77,14 @@ let g:vroom_use_colors = 1
 let g:vroom_use_vimux = 1
 let g:vroom_write_all = 1
 let g:vroom_clear_screen = 1
-"let g:vroom_use_spring = 1
+let g:vroom_use_spring = 0
+let g:vroom_use_spring = 0
+let g:vroom_spec_command = "docker-compose run spec bundle exec rspec"
 
 " auto save config
 let g:auto_save = 1
 let g:auto_save_no_updatetime = 1
-let g:auto_save_in_insert_mode = 0
+let g:auto_save_in_insert_mode = 1
 "let g:auto_save_silent = 0
 
 " nerd tree
@@ -138,18 +110,16 @@ nnoremap <leader><leader> <c-^>
 " Make it obvious where 80 characters is
 "set textwidth=80
 "set colorcolumn=+1
-"hi ColorColumn guibg=#27ae60 ctermbg=11
+hi ColorColumn guibg=#27ae60 ctermbg=11
 
 " CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/public/bower_components/*,*/public/dist/*,*/node_modules/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/bower_components/*,*/dist/*,*/node_modules/*,*/downloads/*
 map <leader>p :CtrlPClearAllCaches<CR>
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
 
 " Map buffer
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
-
-" Explore
-map <leader>n :Explore<CR>
+nnoremap <C-b> :buffers<CR>
