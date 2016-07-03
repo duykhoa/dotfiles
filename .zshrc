@@ -48,7 +48,7 @@ ZSH_THEME="geoffgarside"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-pg git-flow git-flow-completion)
+plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
@@ -104,7 +104,6 @@ export EDITOR='vim'
 #[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 
 #source ~/.transferrc
 #source ~/.git-flow-completion.zsh
