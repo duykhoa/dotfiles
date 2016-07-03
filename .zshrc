@@ -86,6 +86,7 @@ fpath=(~/.zsh $fpath)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias work="cd ~/Workspace"
+alias oss="cd ~/Workspace/opensource"
 alias c="clear"
 alias calc="bc -lq"
 alias gpull="git pull"
