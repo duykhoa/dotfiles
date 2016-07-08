@@ -69,6 +69,14 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+set cursorcolumn
+set cursorline
+
+" config key to toggle cursorcolumn, nohl
+map <leader>C :set cursorcolumn<cr>
+map <leader>c :set nocursorcolumn<cr>
+map <leader>h :nohl<cr>
+
 inoremap jj <Esc>
 
 nmap ; :
