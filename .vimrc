@@ -131,3 +131,6 @@ let g:airline_theme='bubblegum'
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-b> :buffers<CR>
+
+" Vim convert hash syntax
+nnoremap <leader>ch :%s/:\(\w\+\)\s*=>\s*/\1: /g<cr>
