@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="bira"
 #ZSH_THEME="fino"
 #ZSH_THEME="philips"
-ZSH_THEME="geoffgarside"
+ZSH_THEME="steeef"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -109,8 +109,9 @@ export EDITOR='vim'
 #source ~/.transferrc
 #source ~/.git-flow-completion.zsh
 
-export PATH="$PATH:$HOME/Workspace/scripts:/usr/local/Cellar/iftop/1.0pre4/sbin"
 export WORKDIR=~/Workspace
+export GOPATH=$WORKDIR/go_proj
+export PATH="$PATH:$HOME/Workspace/scripts:/usr/local/Cellar/iftop/1.0pre4/sbin:$GOPATH/bin"
 export SCRIPT_DIR=$WORKDIR/scripts
 
 alias dcb="docker-compose build"

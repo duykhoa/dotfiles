@@ -6,3 +6,5 @@ tags
 **/*.gem
 *history
 bin/*.yml
+*.pid
+**/*.idea

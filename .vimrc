@@ -10,12 +10,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'rking/ag.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'benmills/vimux'
-Plugin 'skalnik/vim-vroom'
-Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
@@ -49,7 +43,9 @@ set wildmode=list:longest,full
 set visualbell
 set ttyfast
 set re=1
-set relativenumber
+set norelativenumber
+set nohlsearch
+set colorcolumn=81
 
 set nobackup
 set noswapfile
@@ -61,7 +57,7 @@ set redrawtime=5000
 set updatetime=5000
 set nowrap
 
-colorscheme darkbone
+colorscheme developer "sorcerer
 
 set laststatus=2
 
@@ -69,12 +65,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-set cursorcolumn
-set cursorline
+"set cursorcolumn
+"set cursorline
 
 " config key to toggle cursorcolumn, nohl
 map <leader>C :set cursorcolumn<cr>
 map <leader>c :set nocursorcolumn<cr>
+
 map <leader>h :nohl<cr>
 
 inoremap jj <Esc>
@@ -82,14 +79,6 @@ inoremap jj <Esc>
 nmap ; :
 vmap ; :
 map 0 ^
-
-let g:vroom_use_colors = 1
-let g:vroom_use_vimux = 1
-let g:vroom_write_all = 1
-let g:vroom_clear_screen = 1
-let g:vroom_use_spring = 0
-let g:vroom_use_spring = 0
-let g:vroom_spec_command = "docker-compose run rspec bundle exec rspec"
 
 " auto save config
 let g:auto_save = 1
@@ -131,3 +120,5 @@ let g:airline_theme='bubblegum'
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-b> :buffers<CR>
+
+nnoremap <leader>ch :%s/\(\w\+\)\s*=>\s*/\1: /g<cr>
