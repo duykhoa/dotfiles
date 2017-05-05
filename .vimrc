@@ -17,6 +17,9 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'Raimondi/delimitMate' " autocomplete bracket
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mattn/emmet-vim'
+Plugin 'slim-template/vim-slim.git'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,24 +31,25 @@ let mapleader = ","
 set term=xterm
 set t_Co=256
 
+syntax enable
 set hlsearch
 set background = "dark"
 set modelines=0
-syntax enable
+set tenc=utf8
 set nu
 set ruler
 set autoindent
 set showmode
 set showcmd
+set showmatch
+set incsearch
 set hidden
 set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set ttyfast
 set re=1
-set norelativenumber
-set nohlsearch
-set colorcolumn=81
+set nowrap
 
 set nobackup
 set noswapfile
@@ -55,9 +59,9 @@ set backspace=indent,eol,start
 set lazyredraw
 set redrawtime=5000
 set updatetime=5000
-set nowrap
 
-colorscheme developer "sorcerer
+"colorscheme coldgreen
+colorscheme sexy-railscasts
 
 set laststatus=2
 
@@ -72,13 +76,20 @@ set expandtab
 map <leader>C :set cursorcolumn<cr>
 map <leader>c :set nocursorcolumn<cr>
 
+" turn off hlsearch
+nnoremap <leader><space> :nohlsearch<CR>
+
 map <leader>h :nohl<cr>
 
 inoremap jj <Esc>
 
+highlight ColorColumn ctermbg=2
+
 nmap ; :
 vmap ; :
 map 0 ^
+nmap j gj
+nmap k gk
 
 " auto save config
 let g:auto_save = 1
@@ -89,14 +100,11 @@ let g:auto_save_in_insert_mode = 1
 " nerd tree
 map <leader>n :NERDTreeToggle<CR>
 
-" Vimux
-map <leader>vi :VimuxInspectRunner<CR>
-map <Leader>vq :VimuxCloseRunner<CR>
-
 " fold
-set foldmethod=manual
-set foldnestmax=3       "deepest fold is 3 levels
+set foldmethod=indent
+set foldnestmax=2       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+nnoremap <space> za
 
 " ctags
 nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR><CR>
@@ -106,19 +114,28 @@ nnoremap <leader>. :CtrlPTag<cr>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-hi VertSplit ctermbg=5 ctermfg=256
+" hi VertSplit ctermbg=5 ctermfg=256
+hi VertSplit ctermbg=2 ctermfg=7
 set fillchars+=vert:\|
 
+" Strip trailing space
+nnoremap <leader>st :StripWhitespace<CR>
+
 " CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/bower_components/*,*/dist/*,*/node_modules/*,*/downloads/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/bower_components/*,*/dist/*,*/node_modules/*,*/downloads/*,*/bundled/*,*/unbundled/*
 map <leader>p :CtrlPClearAllCaches<CR>
 
 " Airline
-let g:airline_theme='bubblegum'
+let g:airline_theme="papercolor" "'bubblegum'
 
 " Map buffer
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-b> :buffers<CR>
 
+" Replace hash syntax in ruby
 nnoremap <leader>ch :%s/\(\w\+\)\s*=>\s*/\1: /g<cr>
+
+" Reload vimrc
+nnoremap <leader>sv :source ~/.vimrc<cr>
+nnoremap <leader>ev :vsp ~/.vimrc<cr>
