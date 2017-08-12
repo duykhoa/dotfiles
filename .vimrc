@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'rking/ag.vim'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()
 filetype plugin indent on
@@ -60,8 +61,17 @@ set lazyredraw
 set redrawtime=5000
 set updatetime=5000
 
-"colorscheme coldgreen
-colorscheme sexy-railscasts
+"colorscheme flattown
+"colorscheme sexy-railscasts
+"colorscheme mojave
+"colorscheme lxvc
+"colorscheme lilac
+"colorscheme sierra
+"colorscheme google
+"colorscheme phd
+"colorscheme industry
+"colorscheme grb256
+colorscheme default
 
 set laststatus=2
 
@@ -75,15 +85,22 @@ set expandtab
 " config key to toggle cursorcolumn, nohl
 map <leader>C :set cursorcolumn<cr>
 map <leader>c :set nocursorcolumn<cr>
+map <leader>L :set cursorline<cr>
+map <leader>l :set nocursorline<cr>
+
+set norelativenumber
+"set colorcolumn=81
+set textwidth=81
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
 map <leader>h :nohl<cr>
 
-inoremap jj <Esc>
+inoremap jk <Esc>
 
-highlight ColorColumn ctermbg=2
+highlight ColorColumn ctermbg=7
+highlight ExtraWhitespace ctermbg=4
 
 nmap ; :
 vmap ; :
@@ -120,6 +137,7 @@ set fillchars+=vert:\|
 
 " Strip trailing space
 nnoremap <leader>st :StripWhitespace<CR>
+nnoremap <leader>tw :ToggleWhitespace<CR>
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/bower_components/*,*/dist/*,*/node_modules/*,*/downloads/*,*/bundled/*,*/unbundled/*
