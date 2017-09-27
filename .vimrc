@@ -72,6 +72,7 @@ set updatetime=5000
 "colorscheme industry
 "colorscheme grb256
 colorscheme default
+"colorscheme developer
 
 set laststatus=2
 
@@ -80,7 +81,7 @@ set shiftwidth=2
 set expandtab
 
 "set cursorcolumn
-"set cursorline
+set cursorline
 
 " config key to toggle cursorcolumn, nohl
 map <leader>C :set cursorcolumn<cr>
@@ -88,9 +89,9 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-set norelativenumber
+set relativenumber
 "set colorcolumn=81
-set textwidth=81
+"set textwidth=81
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
@@ -99,8 +100,11 @@ map <leader>h :nohl<cr>
 
 inoremap jk <Esc>
 
-highlight ColorColumn ctermbg=7
-highlight ExtraWhitespace ctermbg=4
+highlight ColorColumn ctermbg=222
+highlight CursorColumn ctermbg=140
+highlight ExtraWhitespace ctermbg=6
+highlight Visual guifg=White guibg=LightBlue gui=none
+highlight Search guifg=White guibg=LightBlue ctermbg=Grey gui=none
 
 nmap ; :
 vmap ; :
@@ -118,10 +122,10 @@ let g:auto_save_in_insert_mode = 1
 map <leader>n :NERDTreeToggle<CR>
 
 " fold
-set foldmethod=indent
-set foldnestmax=2       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-nnoremap <space> za
+"set foldmethod=indent
+"set foldnestmax=2       "deepest fold is 3 levels
+"set nofoldenable        "dont fold by default
+"nnoremap <space> za
 
 " ctags
 nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR><CR>
