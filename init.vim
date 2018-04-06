@@ -1,17 +1,14 @@
-set nocompatible
-
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'Raimondi/delimitMate' " autocomplete bracket
@@ -21,15 +18,17 @@ Plugin 'mattn/emmet-vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'rking/ag.vim'
 Plugin 'ap/vim-css-color'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 call vundle#end()
+
 filetype plugin indent on
+set autoindent
 
 let g:rainbow_active = 1
 
 let mapleader = ","
 
-set term=xterm
 set t_Co=256
 
 syntax enable
@@ -38,56 +37,38 @@ set background = "dark"
 set modelines=0
 set tenc=utf8
 set nu
-set ruler
-set autoindent
 set showmode
 set showcmd
 set showmatch
 set incsearch
 set hidden
-set wildmenu
 set wildmode=list:longest,full
 set visualbell
-set ttyfast
 set re=1
 set nowrap
 
 set nobackup
 set noswapfile
 
-set backspace=indent,eol,start
-
 set lazyredraw
-set redrawtime=5000
-set updatetime=5000
-
-"colorscheme flattown
-"colorscheme sexy-railscasts
-"colorscheme mojave
-"colorscheme lxvc
-"colorscheme lilac
-"colorscheme sierra
-"colorscheme google
-"colorscheme phd
-"colorscheme industry
-"colorscheme grb256
-colorscheme default
-"colorscheme developer
-
-set laststatus=2
+set autoread
+set timeoutlen=1000
 
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set softtabstop=2
 
 "set cursorcolumn
-set cursorline
+"set cursorline
 
 " config key to toggle cursorcolumn, nohl
 map <leader>C :set cursorcolumn<cr>
 map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
+
+colorscheme onedark
 
 set relativenumber
 "set colorcolumn=81
@@ -100,17 +81,35 @@ map <leader>h :nohl<cr>
 
 inoremap jk <Esc>
 
-highlight ColorColumn ctermbg=222
-highlight CursorColumn ctermbg=140
-highlight ExtraWhitespace ctermbg=6
+highlight ColorColumn ctermbg=LightGreen
+highlight CursorColumn ctermbg=Green
+highlight ExtraWhitespace ctermbg=9 guifg=Red
 highlight Visual guifg=White guibg=LightBlue gui=none
-highlight Search guifg=White guibg=LightBlue ctermbg=Grey gui=none
+highlight Search guifg=White guibg=LightBlue ctermbg=Yellow gui=none
+set guioptions=r
 
 nmap ; :
 vmap ; :
 map 0 ^
 nmap j gj
 nmap k gk
+inoremap <CR> <Esc>
+
+nnoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
+nnoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
+nnoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
+nnoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
+
+inoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
+inoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
+inoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
+inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
+
+" copy to clipboard
+"set clipboard=unnamed
+
+map cy "*y
+map cp "*p
 
 " auto save config
 let g:auto_save = 1
@@ -128,15 +127,16 @@ map <leader>n :NERDTreeToggle<CR>
 "nnoremap <space> za
 
 " ctags
-nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log<CR><CR>
+nnoremap <leader>ct :!ctags -R --exclude=.git --exclude=log --exclude=bower_components --exclude=node_modules<CR><CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
 " hi VertSplit ctermbg=5 ctermfg=256
-hi VertSplit ctermbg=2 ctermfg=7
+hi VertSplit ctermbg=none ctermfg=LightBlue
 set fillchars+=vert:\|
 
 " Strip trailing space
@@ -150,10 +150,18 @@ map <leader>p :CtrlPClearAllCaches<CR>
 " Airline
 let g:airline_theme="papercolor" "'bubblegum'
 
+let g:netrw_browse_split = 2
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
 " Map buffer
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-b> :buffers<CR>
+
+" Map ] [ to {}
+nnoremap [ {
+nnoremap ] }
 
 " Replace hash syntax in ruby
 nnoremap <leader>ch :%s/\(\w\+\)\s*=>\s*/\1: /g<cr>
@@ -161,3 +169,15 @@ nnoremap <leader>ch :%s/\(\w\+\)\s*=>\s*/\1: /g<cr>
 " Reload vimrc
 nnoremap <leader>sv :source ~/.vimrc<cr>
 nnoremap <leader>ev :vsp ~/.vimrc<cr>
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
