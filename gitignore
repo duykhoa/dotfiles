@@ -8,3 +8,8 @@ tags
 bin/*.yml
 *.pid
 **/*.idea
+.dockerignore
+Dockerfile
+docker-compose.yml
+latest.dump
+config/*.yml.docker

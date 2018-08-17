@@ -11,7 +11,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/vim-auto-save'
-Plugin 'Raimondi/delimitMate' " autocomplete bracket
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
@@ -19,6 +18,7 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'rking/ag.vim'
 Plugin 'ap/vim-css-color'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'dhruvasagar/vim-table-mode'
 
 call vundle#end()
 
@@ -93,7 +93,6 @@ vmap ; :
 map 0 ^
 nmap j gj
 nmap k gk
-inoremap <CR> <Esc>
 
 nnoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
 nnoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
@@ -114,7 +113,7 @@ map cp "*p
 " auto save config
 let g:auto_save = 1
 let g:auto_save_no_updatetime = 1
-let g:auto_save_in_insert_mode = 1
+"let g:auto_save_in_insert_mode = 1
 "let g:auto_save_silent = 0
 
 " nerd tree
@@ -162,13 +161,6 @@ nnoremap <C-b> :buffers<CR>
 " Map ] [ to {}
 nnoremap [ {
 nnoremap ] }
-
-" Replace hash syntax in ruby
-nnoremap <leader>ch :%s/\(\w\+\)\s*=>\s*/\1: /g<cr>
-
-" Reload vimrc
-nnoremap <leader>sv :source ~/.vimrc<cr>
-nnoremap <leader>ev :vsp ~/.vimrc<cr>
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')

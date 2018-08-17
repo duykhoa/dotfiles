@@ -2,11 +2,11 @@
 
 homedir=~
 pwd=$(pwd)
-files=(.ackrc .crontab .ctags .gemrc .gitconfig .gitignore .rspec .tmux.conf .vimrc .zshrc .transferrc)
+files=(ctags gemrc gitconfig gitignore vimrc tmux.conf)
 
 link_dotfile()
 {
-  ln -s $pwd/$1 $homedir/$1
+  ln -s $pwd/$1 $homedir/.$1
 }
 
 ask_to_replace ()
