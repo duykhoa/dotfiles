@@ -47,6 +47,8 @@ set visualbell
 set re=1
 set nowrap
 
+set mouse=a
+
 set nobackup
 set noswapfile
 
@@ -70,9 +72,9 @@ map <leader>l :set nocursorline<cr>
 
 colorscheme onedark
 
-set relativenumber
-"set colorcolumn=81
-"set textwidth=81
+set norelativenumber
+set colorcolumn=121
+set textwidth=120
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
