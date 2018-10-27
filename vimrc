@@ -43,6 +43,8 @@ set showmatch
 set incsearch
 set hidden
 set wildmode=list:longest,full
+
+set listchars="trail:\u87, nbsp:~;tab:\uBB"
 set visualbell
 set re=1
 set nowrap
@@ -70,9 +72,9 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme onedark
+colorscheme deus "onedark
 
-set norelativenumber
+set relativenumber
 set colorcolumn=121
 set textwidth=120
 
@@ -109,12 +111,12 @@ inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
 " copy to clipboard
 "set clipboard=unnamed
 
-map cy "*y
-map cp "*p
+map cy "+y
+map cp "+p
 
 " auto save config
-let g:auto_save = 1
-let g:auto_save_no_updatetime = 1
+"let g:auto_save = 1
+"let g:auto_save_no_updatetime = 1
 "let g:auto_save_in_insert_mode = 1
 "let g:auto_save_silent = 0
 
@@ -175,3 +177,8 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+
+set suffixesadd+=".rb,.js"
