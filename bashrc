@@ -125,10 +125,10 @@ fi
 
 alias vi="vim"
 
-source "/usr/share/autojump/autojump.bash"
+#source "/usr/share/autojump/autojump.bash"
 
 # Path to the bash it configuration
-export BASH_IT="/home/kevin/.bash_it"
+export BASH_IT="/Users/sgkhoa.tran/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -178,6 +178,11 @@ export SCM_CHECK=true
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
+# Load chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby ruby-2.6.0
+
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
@@ -199,9 +204,14 @@ function tmux.attach {
   tmux attach -t $1
 }
 
+export LC_ALL=en_US.UTF-8
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH:~/Workspace/Personal/ultility_scripts"
 alias work="cd ~/Workspace"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export ULTILITY_SCRIPTS=$HOME/Workspace/Personal/ultility_scripts/
+
+export PATH=$PATH:$ULTILITY_SCRIPTS

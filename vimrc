@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'ervandew/supertab'
@@ -14,7 +13,6 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
-Plugin 'slim-template/vim-slim.git'
 Plugin 'rking/ag.vim'
 Plugin 'ap/vim-css-color'
 Plugin 'rafi/awesome-vim-colorschemes'
@@ -30,7 +28,9 @@ let g:rainbow_active = 1
 let mapleader = ","
 
 set t_Co=256
+set backspace=indent,eol,start
 
+"set nocompatible
 syntax enable
 set hlsearch
 set background = "dark"
@@ -45,9 +45,11 @@ set hidden
 set wildmode=list:longest,full
 
 set listchars="trail:\u87, nbsp:~;tab:\uBB"
-set visualbell
-set re=1
+set novisualbell
+set belloff=all
 set nowrap
+set laststatus=2
+set statusline=
 
 set mouse=a
 
@@ -63,8 +65,14 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 
+set norelativenumber
+set colorcolumn=121
+set textwidth=120
+
 "set cursorcolumn
-"set cursorline
+
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
 
 " config key to toggle cursorcolumn, nohl
 map <leader>C :set cursorcolumn<cr>
@@ -73,10 +81,6 @@ map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
 colorscheme deus "onedark
-
-set relativenumber
-set colorcolumn=121
-set textwidth=120
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
@@ -90,6 +94,8 @@ highlight CursorColumn ctermbg=Green
 highlight ExtraWhitespace ctermbg=9 guifg=Red
 highlight Visual guifg=White guibg=LightBlue gui=none
 highlight Search guifg=White guibg=LightBlue ctermbg=Yellow gui=none
+set guifont=Monaco:h14
+
 set guioptions=r
 
 nmap ; :
@@ -111,8 +117,8 @@ inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
 " copy to clipboard
 "set clipboard=unnamed
 
-map cy "+y
-map cp "+p
+map cy "*y
+map cp "*p
 
 " auto save config
 "let g:auto_save = 1
@@ -120,8 +126,15 @@ map cp "+p
 "let g:auto_save_in_insert_mode = 1
 "let g:auto_save_silent = 0
 
-" nerd tree
-map <leader>n :NERDTreeToggle<CR>
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 2
+let g:netrw_winsize = 20
+
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 " fold
 "set foldmethod=indent
@@ -138,7 +151,7 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" hi VertSplit ctermbg=5 ctermfg=256
+"hi VertSplit ctermbg=5 ctermfg=256
 hi VertSplit ctermbg=none ctermfg=LightBlue
 set fillchars+=vert:\|
 
@@ -151,7 +164,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*
 map <leader>p :CtrlPClearAllCaches<CR>
 
 " Airline
-let g:airline_theme="papercolor" "'bubblegum'
+let g:airline_theme='base16' "'papercolor' 'bubblegum'
 
 let g:netrw_browse_split = 2
 let g:netrw_altv = 1
