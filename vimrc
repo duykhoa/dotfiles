@@ -8,7 +8,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'vim-airline/vim-airline'
@@ -16,10 +15,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
 Plugin 'ap/vim-css-color'
-Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 
@@ -62,13 +62,14 @@ set noswapfile
 set lazyredraw
 set autoread
 set timeoutlen=1000
+set updatetime=100
 
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
 
-set norelativenumber
+set relativenumber
 set colorcolumn=121
 set textwidth=120
 
@@ -83,7 +84,7 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme onedark
+"colorscheme onedark
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
@@ -106,7 +107,7 @@ highlight TabLineSel ctermfg=Grey ctermbg=Cyan
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 
-set guifont=Monaco:h13
+set guifont=Monaco:h12
 set guioptions=r
 
 nmap ; :
@@ -132,10 +133,10 @@ map cy "*y
 map cp "*p
 
 " auto save config
-"let g:auto_save = 1
-"let g:auto_save_no_updatetime = 1
-"let g:auto_save_in_insert_mode = 1
-"let g:auto_save_silent = 0
+let g:auto_save = 1
+let g:auto_save_no_updatetime = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_silent = 0
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -154,7 +155,7 @@ let g:netrw_winsize = 20
 "nnoremap <space> za
 
 " ctags
-nnoremap <leader>ct :!ctags -R --exclude=.git --exclude=log --exclude=bower_components --exclude=node_modules<CR><CR>
+nnoremap <leader>ct :!ctags -R<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
@@ -210,3 +211,8 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 set suffixesadd+=".rb,.js"
+
+command Vimrc :tabnew $HOME/.vimrc
+
+command InsertLocalDate :r!date "+\%Y-\%m-\%d"
+command InsertDateText :r!date "+\%a, \%d \%b \%Y"
