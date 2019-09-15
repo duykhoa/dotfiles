@@ -20,6 +20,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'moll/vim-node'
 
 call vundle#end()
 
@@ -36,7 +37,7 @@ set backspace=indent,eol,start
 "set nocompatible
 syntax enable
 set hlsearch
-set background = "dark"
+set background = "light"
 set modelines=0
 set tenc=utf8
 set nu
@@ -75,7 +76,7 @@ set textwidth=120
 
 "set cursorcolumn
 
-"highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
 
 " config key to toggle cursorcolumn, nohl
@@ -84,7 +85,7 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-"colorscheme onedark
+colorscheme slate
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
@@ -101,9 +102,9 @@ highlight Search guifg=White guibg=LightBlue ctermbg=Yellow gui=none
 highlight LineNr ctermfg=LightBlue
 highlight CursorLineNr ctermbg=White ctermfg=Brown cterm=bold
 
-highlight TabLineFill ctermfg=210 ctermbg=238
-highlight TabLine ctermbg=Brown ctermfg=White guifg=White guibg=Brown
-highlight TabLineSel ctermfg=Grey ctermbg=Cyan
+highlight TabLineFill ctermfg=0 ctermbg=0
+highlight TabLine ctermbg=8 ctermfg=White guifg=White guibg=Grey
+highlight TabLineSel ctermfg=Blue ctermbg=LightBlue
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 
@@ -158,7 +159,7 @@ let g:netrw_winsize = 20
 nnoremap <leader>ct :!ctags -R<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <C-b> :CtrlPBuffer<cr>
 
 " Vim explorer
 "nnoremap <leader>n :Lexplore.<cr>
@@ -179,9 +180,6 @@ nnoremap <leader>tw :ToggleWhitespace<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/coverage/*,tags,*/maildir/*,*/vendor/*,*/public/assets/*,*/bower_components/*,*/dist/*,*/node_modules/*,*/downloads/*,*/bundled/*,*/unbundled/*
 map <leader>p :CtrlPClearAllCaches<CR>
 
-" Airline
-"let g:airline_theme='base16' "'papercolor' 'bubblegum'
-
 let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
@@ -189,7 +187,6 @@ let g:netrw_winsize = 25
 " Map buffer
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
-nnoremap <C-b> :buffers<CR>
 
 " Map ] [ to {}
 nnoremap [ {

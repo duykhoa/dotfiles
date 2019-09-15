@@ -13,3 +13,4 @@ latest.dump
 .notes/
 
 *-imp*.rb
+.env

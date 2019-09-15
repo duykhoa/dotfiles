@@ -15,7 +15,7 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-set -o vi
+set -o emacs
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -181,7 +181,7 @@ export SCM_CHECK=true
 # Load chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.6.0
+chruby ruby-2.6.3
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
@@ -214,4 +214,4 @@ alias work="cd ~/Workspace"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export ULTILITY_SCRIPTS=$HOME/Workspace/Personal/ultility_scripts/
 
-export PATH=$PATH:$ULTILITY_SCRIPTS
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$ULTILITY_SCRIPTS"
