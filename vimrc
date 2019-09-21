@@ -85,7 +85,12 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme slate
+colorscheme shine "slate
+let g:airline_theme='base16_3024'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
 
 " turn off hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
@@ -102,9 +107,9 @@ highlight Search guifg=White guibg=LightBlue ctermbg=Yellow gui=none
 highlight LineNr ctermfg=LightBlue
 highlight CursorLineNr ctermbg=White ctermfg=Brown cterm=bold
 
-highlight TabLineFill ctermfg=0 ctermbg=0
-highlight TabLine ctermbg=8 ctermfg=White guifg=White guibg=Grey
-highlight TabLineSel ctermfg=Blue ctermbg=LightBlue
+"highlight TabLineFill ctermfg=0 ctermbg=0
+"highlight TabLine ctermbg=8 ctermfg=White guifg=White guibg=Grey
+"highlight TabLineSel ctermfg=Blue ctermbg=LightBlue
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 

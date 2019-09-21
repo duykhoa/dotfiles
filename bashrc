@@ -190,6 +190,8 @@ alias gdca="git diff --cached"
 alias gc!="git commit --amend"
 alias glol="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
+alias top="htop"
+
 function gpush1 {
   branch=$(git rev-parse --abbrev-ref HEAD)
   echo "--- push upstream origin $branch"
