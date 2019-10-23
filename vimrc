@@ -21,6 +21,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'moll/vim-node'
+Plugin 'severij/vadelma'
 
 call vundle#end()
 
@@ -37,10 +38,11 @@ set backspace=indent,eol,start
 "set nocompatible
 syntax enable
 set hlsearch
-set background = "light"
 set modelines=0
 set tenc=utf8
 set nu
+set ignorecase
+set smartcase
 set showmode
 set showcmd
 set showmatch
@@ -77,7 +79,7 @@ set textwidth=120
 "set cursorcolumn
 
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-set cursorline
+"set cursorline
 
 " config key to toggle cursorcolumn, nohl
 map <leader>C :set cursorcolumn<cr>
@@ -85,7 +87,7 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme shine "slate
+colorscheme vadelma
 let g:airline_theme='base16_3024'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -122,16 +124,6 @@ map 0 ^
 nmap j gj
 nmap k gk
 
-nnoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
-nnoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
-nnoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
-nnoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
-
-inoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
-inoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
-inoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
-inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
-
 " copy to clipboard
 "set clipboard=unnamed
 
@@ -161,7 +153,7 @@ let g:netrw_winsize = 20
 "nnoremap <space> za
 
 " ctags
-nnoremap <leader>ct :!ctags -R<CR>
+nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths) -f tags<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <C-b> :CtrlPBuffer<cr>
@@ -215,6 +207,9 @@ let g:NERDTreeDirArrowCollapsible = '-'
 set suffixesadd+=".rb,.js"
 
 command Vimrc :tabnew $HOME/.vimrc
+command CleanGeneratedComments :%s/^\s*#.*\n//g
 
 command InsertLocalDate :r!date "+\%Y-\%m-\%d"
 command InsertDateText :r!date "+\%a, \%d \%b \%Y"
+
+set background=dark

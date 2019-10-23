@@ -21,6 +21,8 @@ set -o emacs
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+export PROMPT_COMMAND="history -a; history -n"
+
 export EDITOR="vim"
 export VISUAL="vim"
 
@@ -181,7 +183,8 @@ export SCM_CHECK=true
 # Load chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.6.3
+
+chruby 2.6.4
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
@@ -216,4 +219,9 @@ alias work="cd ~/Workspace"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export ULTILITY_SCRIPTS=$HOME/Workspace/Personal/ultility_scripts/
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$ULTILITY_SCRIPTS"
+export PATH="/usr/local/opt/openssl/bin:/usr/local/bin:/usr/local/sbin:$PATH:$ULTILITY_SCRIPTS"
+export LC_COLLATE=C
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
