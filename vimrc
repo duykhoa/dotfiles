@@ -153,7 +153,7 @@ let g:netrw_winsize = 20
 "nnoremap <space> za
 
 " ctags
-nnoremap <leader>ct :!ctags -R<CR>
+nnoremap <leader>ct :!ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths) -f tags<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <C-b> :CtrlPBuffer<cr>
