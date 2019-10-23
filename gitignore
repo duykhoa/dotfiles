@@ -9,8 +9,7 @@ bin/*.yml
 *.pid
 **/*.idea
 latest.dump
-
 .notes/
-
+coverage/
 *-imp*.rb
 .env
