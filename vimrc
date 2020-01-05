@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
@@ -22,6 +23,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'moll/vim-node'
 Plugin 'severij/vadelma'
+Plugin 'sainnhe/vim-color-lost-shrine'
+Plugin 'udalov/kotlin-vim'
+Plugin 'kshenoy/vim-signature'
+Plugin 'slim-template/vim-slim'
 
 call vundle#end()
 
@@ -56,6 +61,7 @@ set belloff=all
 set nowrap
 set laststatus=2
 set statusline=2
+set background=dark
 
 set mouse=a
 
@@ -72,7 +78,7 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 
-set relativenumber
+set norelativenumber
 set colorcolumn=121
 set textwidth=120
 
@@ -87,7 +93,7 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme vadelma
+colorscheme vadelma "lost-shrine
 let g:airline_theme='base16_3024'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -212,4 +218,5 @@ command CleanGeneratedComments :%s/^\s*#.*\n//g
 command InsertLocalDate :r!date "+\%Y-\%m-\%d"
 command InsertDateText :r!date "+\%a, \%d \%b \%Y"
 
-set background=dark
+command ToggleLightLackground :set background=light
+command ToggleDarkBackground :set background=dark
