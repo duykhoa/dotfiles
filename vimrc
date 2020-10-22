@@ -1,4 +1,5 @@
 filetype off
+set encoding=utf-8
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -8,7 +9,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -19,8 +19,13 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'moll/vim-node'
+Plugin 'ervandew/supertab'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
@@ -37,7 +42,7 @@ set backspace=indent,eol,start
 "set nocompatible
 syntax enable
 set hlsearch
-set background = "light"
+set background="dark"
 set modelines=0
 set tenc=utf8
 set nu
@@ -85,7 +90,7 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme shine "slate
+colorscheme ron
 let g:airline_theme='base16_3024'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -99,13 +104,13 @@ map <leader>h :nohl<cr>
 
 inoremap jk <Esc>
 
-highlight ColorColumn ctermbg=LightGreen
-highlight CursorColumn ctermbg=Green
-highlight ExtraWhitespace ctermbg=9 guifg=Red
-highlight Visual guifg=White guibg=LightBlue gui=none
-highlight Search guifg=White guibg=LightBlue ctermbg=Yellow gui=none
-highlight LineNr ctermfg=LightBlue
-highlight CursorLineNr ctermbg=White ctermfg=Brown cterm=bold
+" highlight ColorColumn ctermbg=LightGreen
+" highlight CursorColumn ctermbg=Green
+" highlight ExtraWhitespace ctermbg=9 guifg=Red
+" highlight Visual guifg=White guibg=LightBlue gui=none
+" highlight Search guifg=White guibg=LightBlue ctermbg=Yellow gui=none
+" highlight LineNr ctermfg=LightBlue
+" highlight CursorLineNr ctermbg=White ctermfg=Brown cterm=bold
 
 "highlight TabLineFill ctermfg=0 ctermbg=0
 "highlight TabLine ctermbg=8 ctermfg=White guifg=White guibg=Grey
@@ -135,8 +140,8 @@ inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
 " copy to clipboard
 "set clipboard=unnamed
 
-map cy "*y
-map cp "*p
+map cy "+y
+map cp "+p
 
 " auto save config
 let g:auto_save = 1
@@ -155,10 +160,10 @@ let g:netrw_winsize = 20
 "augroup END
 
 " fold
-"set foldmethod=indent
-"set foldnestmax=2       "deepest fold is 3 levels
-"set nofoldenable        "dont fold by default
-"nnoremap <space> za
+set foldmethod=syntax
+set foldnestmax=1       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+nnoremap <space> za
 
 " ctags
 nnoremap <leader>ct :!ctags -R<CR>
@@ -189,6 +194,17 @@ let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 " Map buffer
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
@@ -202,17 +218,10 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
-set suffixesadd+=".rb,.js"
+set suffixesadd+=".rb,.js,.go"
 
 command Vimrc :tabnew $HOME/.vimrc
 
