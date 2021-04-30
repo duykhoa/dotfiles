@@ -23,9 +23,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'moll/vim-node'
 Plugin 'ervandew/supertab'
-Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -75,7 +76,7 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 
-set relativenumber
+set norelativenumber
 set colorcolumn=121
 set textwidth=120
 
@@ -90,7 +91,7 @@ map <leader>c :set nocursorcolumn<cr>
 map <leader>L :set cursorline<cr>
 map <leader>l :set nocursorline<cr>
 
-colorscheme ron
+colorscheme default
 let g:airline_theme='base16_3024'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -127,15 +128,15 @@ map 0 ^
 nmap j gj
 nmap k gk
 
-nnoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
-nnoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
-nnoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
-nnoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
+"nnoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
+"nnoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
+"nnoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
+"nnoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
 
-inoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
-inoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
-inoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
-inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
+"inoremap <up>    <Esc>:echoerr 'Please use k instead'<CR>
+"inoremap <down>  <Esc>:echoerr 'Please use j instead'<CR>
+"inoremap <left>  <Esc>:echoerr 'Please use h instead'<CR>
+"inoremap <right> <Esc>:echoerr 'Please use l instead'<CR>
 
 " copy to clipboard
 "set clipboard=unnamed
@@ -144,8 +145,8 @@ map cy "+y
 map cp "+p
 
 " auto save config
-let g:auto_save = 1
-let g:auto_save_no_updatetime = 1
+let g:auto_save = 0
+let g:auto_save_no_updatetime = 0
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 0
 
@@ -160,8 +161,8 @@ let g:netrw_winsize = 20
 "augroup END
 
 " fold
-set foldmethod=syntax
-set foldnestmax=1       "deepest fold is 3 levels
+set foldmethod=indent
+set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 nnoremap <space> za
 
@@ -195,13 +196,15 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+set completeopt-=preview
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
+"nnoremap <leader>jd :YcmCompleter GoTo<CR>
+"nnoremap <leader>fx :YcmCompleter FixIt<CR>
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = ";"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
@@ -222,6 +225,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 set suffixesadd+=".rb,.js,.go"
+au filetype go inoremap <buffer> .<C-p> .<C-x><C-o>
 
 command Vimrc :tabnew $HOME/.vimrc
 
